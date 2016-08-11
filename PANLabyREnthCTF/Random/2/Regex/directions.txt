@@ -1,0 +1,2 @@
+Submit the solution here to obtain the key:
+nc 52.27.101.106 2600
