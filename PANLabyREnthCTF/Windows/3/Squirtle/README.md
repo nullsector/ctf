@@ -34,5 +34,22 @@ Although these checks can be bypassed manually, I use the hidedebug plugin for I
 
 ### Solution
 
+At first the program check the user input agains the string "incorrect". This is the password.
+![Here](PassCheck.PNG)
+![Here](PassSquirt.PNG)
+
+Then it checks to see if any GUI's from various debuggers are present.
+![Here](WindowDbg.PNG)
+![Here](WindowCheck.PNG)
+
+Then it checks to see if BeingDebugger is set in the PEB, hence the reference to fs:[30h+2]. Must not patch the PEB.
+![Here](PEB.PNG)
+
+The rest of the checks are passed via the use of the hidedebug plugin. At the end the program will output an image file.
+![Here](Complete.PNG)
+![Here](answer.jpg)
+
+Encoded in binary is our flag.
+
 #### Flag
 > PAN{Th3_$quirtL3_$qu@d_W@z_bLuffiNg}
