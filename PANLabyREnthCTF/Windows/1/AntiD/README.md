@@ -10,8 +10,10 @@ Loading it in Stud_PE indicates that it is packed with UPX, although the section
 
 I was able to unpack the executable with the built-in UPX unpacker that is included in PE Explorer. Load the binary in Immunity Debugger and set a breakpoint right at where it prompts the user for the key.
 ![Initial Breakpoint](AntiD2.PNG)
+
 The program is expecting a 16 character key to be inputed, but when stepping through I noticed the flag generating algorithm. 
 ![Flag Generating Algorithm](AntiDAlgo.PNG)
+
 Another thing to note is this little lookup table that is in the binary.
 ![LookUp Table](AntiDLookupTable.PNG)
 
@@ -28,6 +30,7 @@ The algorithm is:
 
 Stepping through the algorithm, you find some Anti-Debugging techniques. The program goes into the fail state via calls to IsDebuggerPresent, CheckRemoteDebuggerPresent, and FindWindowW -> if you are using OllyDbg. 
 ![Anti-Debugging](AntiDAnti.PNG)
+
 You can patch these calls manualy or use a plugin like hidedebug. 
 
 Enter the character P through the algorithm we get the value 0x8C which is then xored with 0x00 and checked against the table 
