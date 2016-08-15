@@ -6,6 +6,7 @@ water riddle that was in the movie Die Hard with a Vengence. This riddle has 3 "
 and the last one is 19 gallons. The 7 and 13 gallon jugs start full, and you need to get 10 gallons in the 19 gallon jug, and 10 gallons in the 13 gallon jug.
 
 Initially running the program, it asks you to enter a serial.
+
 ![Here](InitialRun.PNG)
 
 ### Solution
