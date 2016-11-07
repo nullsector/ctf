@@ -8,7 +8,7 @@ We are given a 32-bit windows PE file. When run it asks for a password.
 ### Solution
 Stepping through the challenge, I noticed a string which seemed to be a base64 encoded string.
 
-![Here](Base64.PNG)
+![Here](base64.PNG)
 
 Tried to initially decode the string and failed. Then I noticed what seemed to be a custom alphabet used for a custom base64 encoding.
 
@@ -16,7 +16,7 @@ Tried to initially decode the string and failed. Then I noticed what seemed to b
 
 So I grabbed a python script from an online source to test my hypothesis and it worked.
 
-![Here](custom-b64.py)
+![Script](custom-b64.py)
 ![Here](Solution.PNG)
 
 #### Flag
