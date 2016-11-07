@@ -17,6 +17,7 @@ Tried to initially decode the string and failed. Then I noticed what seemed to b
 So I grabbed a python script from an online source to test my hypothesis and it worked.
 
 ![Script](custom-b64.py)
+
 ![Here](Solution.PNG)
 
 #### Flag
