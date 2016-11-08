@@ -29,7 +29,8 @@ ve_vant_ze-money.jpg in that folder and changes your wallpaper to it.
 
 Since the crypto this program is using is AES which is a symmetric-key algorithm, we can use the same key that is generated to encrypt our file, to decrypt them.
 My first attempt was to write a C++ program to decrypt the contents of the file BusinessPapers.doc.
-![FirstAttempt](FirstAttempt.cpp] 
+
+![FirstAttempt](FirstAttempt.cpp)
 
 I then figured that it would be much easier to just patch the binary's IAT to include the call to the call CryptDecrypt that way I can just change the call
 from CryptEncypt to CryptDecrypt thus allowing me to decrypt the file BusinessPapers.doc.
