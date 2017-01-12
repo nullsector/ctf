@@ -5,3 +5,4 @@ A military organization captured a laptop of a known explosives expert within a 
 
 SHA256: 7c8cd1ca7d75175b768cd16dc40359acf7eb2b5d58a28ce146660ef4ad5f4ec7
 
+client.exe sends a TCP syn packet to remote port 8080 via local port 17920
