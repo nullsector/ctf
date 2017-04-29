@@ -7,7 +7,7 @@ Even ASLR and NX can't seem to stop you from exploiting all these buffer overflo
 We are given a statically linked, 64-bit ELF binary and source-code. Looking at the source, it is a straight forward buffer-overflow in gets(). The problem is that we don't have system() or the string /bin/sh in our binary, so we have to use other ROP techniques to exploit the binary.
 
 ### Solution
-  Lucky we have access to ROP gadgets in __libc_csu_init(). We are going to have everything that we need for a complete ROP chain.
+We are able to reach right before rip with 72 bytes.  Lucky we have access to ROP gadgets in __libc_csu_init(). We are going to have everything that we need for a complete ROP chain.
 
 Write-what-where gadgets
 0x4734e1 mov qword ptr [rsi], rax ; ret
