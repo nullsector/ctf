@@ -1,4 +1,4 @@
-#PAN LabyREnth 2017 - Docs #4
+# PAN LabyREnth 2017 - Docs #4
 
 Hint: A zip, a js, a binary, oh my! I heard you like layerz dawg, so
 I put more layers inside yo' layers.
@@ -191,6 +191,6 @@ The last bit of data needs to be xored with 0x21 inorder to reveal a png file
 ![here](Part2.png)
 the png file has half of the flag
 
-####Flag
+#### Flag
 
 >PAN{N0thing_l5_S@f3_ln_Thi5_W0rld!}
