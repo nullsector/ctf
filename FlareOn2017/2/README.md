@@ -40,7 +40,7 @@ Now we can take the 0x27 bytes at byte_403000 and script our solution.
 
 ![Solution](solve.py)
 
-![Here](FlareOnChal2Solve.PNG)
+![Here](FlareOnChal2Solve.JPG)
 
 
 
