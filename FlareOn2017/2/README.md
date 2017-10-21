@@ -38,8 +38,9 @@ We can see by the operation that the key ends up being 0x04.
 
 Now we can take the 0x27 bytes at byte_403000 and script our solution.
 
-![Solution](Solve.py)
+![Solution](solve.py)
 
+![Here](FlareOnChal2Solve.PNG)
 
 
 
